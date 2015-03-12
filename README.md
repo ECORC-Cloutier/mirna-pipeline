@@ -12,11 +12,15 @@ A manual can be found within the documentation folder. Feel free to modify the L
 
 Required Tools/Languages/Modules:
 - Bash Shell/Terminal (or cygwin terminal for Windows)
+- GNU Parallel
 - Python 2.7.9
 - Biopython (Python Library)
 - BLAST+ standalone
 - Perl
 - String::Approx (Perl module)
 - R programming language
+- edgeR (R package)
+- bowtie2
+- MAFFT
 - FASTQC (for quality control)
 - Geneious (for quality control)
