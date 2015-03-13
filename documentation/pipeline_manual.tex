@@ -225,7 +225,7 @@ This step is technically not required for the continued operation of the pipelin
 \section{Secondary Stage: Identification}
 
 \subsection{Align conserved sequences to the wheat genome}
-Now that all the BLAST has been performed, any potential conserved microRNA has been annotated. For extra validation, we now map these sequences onto the wheat genome using bowtie2. This step takes an extremely long time (over 48 hours for 12 MiSeq files). Although there is a shell script that automates this process to run in parallel for all files, it is strongly recommended that you choose only the replicates that you wish to analyze and process them separately. You will first need to build the bowtie2 database. After, msa.py will take a group file as input and output .fasta and .bam for alignments and contigs.
+Now that all the BLAST has been performed, any potential conserved microRNA has been annotated. For extra validation, we now map these sequences onto the wheat genome using bowtie2. This step takes an extremely long time (over 48 hours for 12 MiSeq files). Although there is a function in main.sh (align\_group()) that automates this process to run in parallel for all files, it is strongly recommended that you choose only the replicates that you wish to analyze and process them separately. You will first need to build the bowtie2 database. After, msa.py will take a group file as input and output .fasta and .bam for alignments and contigs.
 \begin{enumerate}
 \item Download the latest wheat genome as a .fasta/.fa file.
 \item Create the alignment database with the command:
