@@ -218,7 +218,7 @@ find -name "*.cons" -exec cp {} /path/to/new/dir \;
 This step is technically not required for the continued operation of the pipeline, but produces the most important information; it generates .csv reports of successfully annotated microRNA and their respective reads per million and counts. This step takes the consistent summary .csv file for each replicate as input, matches the BLAST sequence to its reads per million count, and outputs a .csv file, for both 0 mismatch and 1-4 mismatch.
 \begin{enumerate}
 \item Create a new directory within your working directory and populate it with all the ``.cons" files, ``.fasta\_mature.csv", and ``.fasta\_1\_4mm.fa\_mature.csv" from the miRBase BLAST. You can use the find command from the previous step.
-\item Copy create\_id\_rpmlist.py and rpmlist\_parallel.sh.
+\item Copy main.sh, create\_id\_rpmlist.py and rpmlist\_parallel.sh.
 \item Run rpmlist\_parallel.sh.
 \end{enumerate}
 
