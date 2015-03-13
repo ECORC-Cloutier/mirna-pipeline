@@ -25,7 +25,7 @@ if (safe):
   stat.write('wrote:  final\n' )
   stat.close()
 
-seq_count_pairs = map.items() # statements below create summary files and .fasta for each unique sequence
+seq_count_pairs = map.items() 
 total_num_seq = sum( [ x[-1] for x in seq_count_pairs ] )
 seq_count_pairs.sort(reverse=True,key=lambda pair: pair[-1])
 count = 1
@@ -36,10 +36,10 @@ summaryfile.write('seq#,distinct read,seq,read count,normalized read count (RPM)
 experiment_number = os.path.basename(os.path.normpath(os.getcwd())).split('_')[0]
 for x in seq_count_pairs:
  
-  outfile.write('>species' + str(count) + '_sample' + experiment_number +'_of_XDAYS_'+str(len(x[0]))+'bp\n') #change XDAYS to actual number of days
+  outfile.write('>species' + str(count) + '_sample' + experiment_number +'_of_XDAYS_'+str(len(x[0]))+'bp\n') #change XDAYS to total number of days, like 12DAYS, 10DAYS, etc. DON'T PUT SPACES IN NAMES
   outfile.write(x[0]+'\n')
   normalized = 1000000 * float(x[1]) / total_num_seq
-  summaryfile.write(str(count)+',>species' + str(count) + '_sample' +experiment_number +'_of_XDAYS_'+str(len(x[0]))+'bp,'+str(x[0])+','+str(x[1])+','+str(normalized)+'\n')
+  summaryfile.write(str(count)+',>species' + str(count) + '_sample' +experiment_number +'_of_XDAYS_'+str(len(x[0]))+'bp,'+str(x[0])+','+str(x[1])+','+str(normalized)+'\n') #change XDAYS here as well
   count+=1
 summaryfile.write(',total:'+str(total_num_seq)+',\n')
 outfile.close()
