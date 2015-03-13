@@ -8,7 +8,7 @@ do
     file1=${base}.smaller.cons
     file2=${base}_cons_master.fasta_mature.csv
     file3=${base}_cons_master.fasta_1_4mm.fa_mature.csv
-    mv $file $file1 $file2 $file3 $base
+    mv $file1 $file2 $file3 $base
     cd $base
     python create_id_rpmlist.py $file1 $file2 0 &
     cd ..
