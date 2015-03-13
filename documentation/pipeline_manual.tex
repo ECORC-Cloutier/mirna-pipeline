@@ -236,13 +236,13 @@ bowtie2-build file.fa trit
 \end{tcolorbox}where file.fa is the name of your database file. Your new database files will be named ``trit". This will take a very long time.
 \item Download the hairpin.fa file from the miRBase FTP site.
 \item Create a new directory and move all of the aforementioned files into it, including main.sh, msa.py, and extract\_precursor.py.
-\item Copy all of the group\_mature files from the miRBase BLAST into the directory. You may use the find command.
+\item Copy all of the group\_mature .fa files from the miRBase BLAST into the directory. You may use the find command.
 \item In terminal, run:
 \begin{tcolorbox}
 \begin{lstlisting}
 python msa.py file.fa database.fa
 \end{lstlisting}
-\end{tcolorbox}where file.fa is a group file and database.fa is the genome file.
+\end{tcolorbox}where file.fa is a group file and database.fa is the genome file (full name).
 \end{enumerate}
 
 \subsection{Identify novel microRNA sequences}
