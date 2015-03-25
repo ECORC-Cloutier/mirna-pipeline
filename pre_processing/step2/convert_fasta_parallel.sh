@@ -4,4 +4,4 @@ source main.sh
 
 export -f convert_fasta
 
-parallel convert_fasta {} ::: *.fastq
+parallel convert_fasta {} ::: *trimmed.fastq
