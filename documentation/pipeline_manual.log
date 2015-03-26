@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.2.12)  25 MAR 2015 15:03
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.2.12)  26 MAR 2015 10:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -686,92 +686,86 @@ Overfull \hbox (53.67068pt too wide) in paragraph at lines 192--193
 nsist[]day1[]to[]later.sh
  []
 
-
-Overfull \hbox (11.62524pt too wide) in paragraph at lines 193--194
-[]\OT1/phv/m/n/12 For the rep[]consist[]day1[]to[]later.sh script in each day d
-i-rec-tory, change
- []
-
 [9]
-Overfull \hbox (5.10832pt too wide) in paragraph at lines 197--198
+Overfull \hbox (5.10832pt too wide) in paragraph at lines 201--202
 \OT1/phv/m/n/12 NOTE: File hi-er-ar-chy is ex-tremely im-por-tant! Fol-low step
 s ex-actly or change
  []
 
 
-Overfull \hbox (25.29095pt too wide) in paragraph at lines 200--201
+Overfull \hbox (25.29095pt too wide) in paragraph at lines 204--205
 \OT1/phv/m/n/12 .fasta and .csv for all 0 mis-match con-served mi-croRNA found 
 (*fasta[]mature.fa),
  []
 
 
-Overfull \hbox (40.83102pt too wide) in paragraph at lines 200--201
+Overfull \hbox (40.83102pt too wide) in paragraph at lines 204--205
 \OT1/phv/m/n/12 .fasta and .csv for 1-4 mis-match con-served mi-croRNA (*fasta[
 ]1[]4mm.fa[]mature.fa)
  []
 
 
-Overfull \hbox (0.12607pt too wide) in paragraph at lines 202--203
+Overfull \hbox (0.12607pt too wide) in paragraph at lines 206--207
 []\OT1/phv/m/n/12 Prepare the BLAST database file by run-ning the script mir[]p
 lantize.py
  []
 
 [10]
-Overfull \hbox (16.40599pt too wide) in paragraph at lines 211--212
+Overfull \hbox (16.40599pt too wide) in paragraph at lines 215--216
 []\OT1/phv/m/n/12 Copy main.sh, mas-ter[]parallel, make[]master.py, find[]matur
 e[]parallel.sh,
  []
 
 
-Overfull \hbox (31.06778pt too wide) in paragraph at lines 211--212
+Overfull \hbox (31.06778pt too wide) in paragraph at lines 215--216
 \OT1/phv/m/n/12 find[]mature[]novel[]parallel.sh, find[]mature[]0mm.py, find[]m
 ature[]1[]4mm.py,
  []
 
 
-Overfull \hbox (46.59534pt too wide) in paragraph at lines 220--221
+Overfull \hbox (46.59534pt too wide) in paragraph at lines 224--225
 \OT1/phv/m/n/12 with all the ``.cons" files, ``.fasta[]mature.csv", and ``.fast
 a[]1[]4mm.fa[]mature.csv"
  []
 
 [11]
-Underfull \hbox (badness 10000) in paragraph at lines 249--250
+Underfull \hbox (badness 10000) in paragraph at lines 253--254
 
  []
 
 [12]
-Underfull \hbox (badness 10000) in paragraph at lines 259--260
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 261--262
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 263--264
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 265--266
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 267--268
+
+ []
+
 [13]
-Overfull \hbox (1.23175pt too wide) in paragraph at lines 265--266
+Overfull \hbox (1.23175pt too wide) in paragraph at lines 269--270
 \OT1/phv/m/n/12 though it is ex-tremely un-likely that any func-tion-al-ity or 
 method of use should
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 271.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 275.
 [14]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 271.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 275.
  (./pipeline_manual.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 271.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 271.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 275.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 275.
 Package rerunfilecheck Info: File `pipeline_manual.out' has not changed.
 (rerunfilecheck)             Checksum: 018450360BAAA6B680BEED1760207041;1283.
  ) 
 Here is how much of TeX's memory you used:
- 14147 strings out of 494985
- 242461 string characters out of 6180356
+ 14148 strings out of 494985
+ 242483 string characters out of 6180356
  338418 words of memory out of 5000000
  17010 multiletter control sequences out of 15000+600000
  18243 words of font info for 40 fonts, out of 8000000 for 9000
@@ -784,10 +778,10 @@ onts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/public/amsfonts/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/u
 rw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/
 uhvr8a.pfb>
-Output written on pipeline_manual.pdf (15 pages, 90900 bytes).
+Output written on pipeline_manual.pdf (15 pages, 92045 bytes).
 PDF statistics:
- 282 PDF objects out of 1000 (max. 8388607)
- 256 compressed objects within 3 object streams
- 122 named destinations out of 1000 (max. 500000)
+ 283 PDF objects out of 1000 (max. 8388607)
+ 257 compressed objects within 3 object streams
+ 123 named destinations out of 1000 (max. 500000)
  141 words of extra memory for PDF output out of 10000 (max. 10000000)
 

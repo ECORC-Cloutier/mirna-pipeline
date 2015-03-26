@@ -90,7 +90,7 @@ parallel function {} ::: *.txt
 Here is a quick tip that most beginners tend to forget: \textbf{You must be in the directory where the script is located in order to run it.} Change into the directory using terminal to run a script. Consequently, any files that you wish to process must also be in the same directory as the script. If you need any assistance, the Internet is full of wonderful reference guides and tutorials!
 
 \section*{Procedure}
-\textbf{WARNING}: The scripts in this pipeline utilize wildcards for file names and involve a little bit of hardcoding as well. Always read the script beforehand to see if any modifications are necessary.  
+\textbf{WARNING}: The scripts in this pipeline utilize wildcards for file names and involve a little bit of hardcoding as well. Never run a script without reading it beforehand to see if any modifications are necessary.  
 
 \section{Pre-Processing Stage}
 
@@ -190,8 +190,12 @@ It is important to annotate identical sequences with the same name across the en
 \item Copy consist\_day0.py and rep\_consist\_day0.sh into the day 0 directory or whichever directory is numerically first.
 \item If your first day is not day 0, open both scripts and make the necessary changes as indicated by the comments. Run rep\_consist\_day0.sh.
 \item Open consist\_day1\_to\_later.py and change the days array at the top if necessary. Then copy consist\_day1\_to\_later.py and rep\_consist\_day1\_to\_later.sh into all the other day directories. 
-\item For the rep\_consist\_day1\_to\_later.sh script in each day directory, change the ``num" variable to the correct day number.
-\item Run rep\_consist\_day1\_to\_later.sh for each day (remember that you must change into the directory first), starting from the lowest day number to the highest day number. Order matters! 
+\item Run rep\_consist\_day1\_to\_later.sh for each day, starting from the lowest day number to the highest day number (order matters!), and inputting the current day number as a command-line argument:
+\begin{tcolorbox}
+\begin{lstlisting}
+bash rep_consist_day1_to_later.sh NUMBER
+\end{lstlisting}
+\end{tcolorbox}where NUMBER is the current day number (i.e. 3, 7 , 10, etc.). Remember that you must change into the directory first.
 \item If the output .csv is too large and exceeds the limit for a spreadsheet browser (highly unlikely, only occurs with high-output NGS machines like HiSeq), it is possible to split the .csv file into parts of 500000. However, be warned that if you choose to do so, several wildcards will have to be modified further down (you'll have to figure it out on your own!). Create a directory with only the .cons files, copy csv\_split.py and csv\_split\_parallel.sh from the optional\_steps directory, as well as main.sh, and run csv\_split\_parallel.sh.
 \end{enumerate}
 \noindent NOTE: File hierarchy is extremely important! Follow steps exactly or change the shell scripts. 
