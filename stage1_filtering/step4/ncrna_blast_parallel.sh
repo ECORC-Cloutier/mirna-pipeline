@@ -15,7 +15,7 @@ parallel launch_lncrna {} ::: *L001_R1_001*  #change wildcard if necessary
 echo Finished LNCRNA at `date`. Starting CHLORO BLAST...
 
 parallel launch_chloro {} ::: *L001_R1_001*  #change wildcard if necessary
-echo All BLASTs completed a `date`.
+echo All BLASTs completed at `date`.
 
 
 
