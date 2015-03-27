@@ -151,9 +151,10 @@ find_mature()
     file=$1
     base=${file%%.*}
     mkdir ${base}
-    cp find_mature_0mm.py MPC* $file $base
+    mv $file $base
+    cp find_mature_0mm.py MPC* $base
     cd $base
-    python find_mature_0mm.py $file MPC $file MPC.fa
+    python find_mature_0mm.py $file MPC $base MPC.fa
     cd ..
 }
 
@@ -162,8 +163,8 @@ find_mature_novel()
     file=$1
     cp find_mature_1_4mm.py $file
     cd $file
-    name=${file}.fasta_1_4mm.fa
-    python find_mature_1_4mm.py $name MPC $name MPC.fa
+    name=${file}_1_4mm.fa
+    python find_mature_1_4mm.py $name MPC ${file}_1_4mm MPC.fa
     cd ..
 }
 
@@ -174,8 +175,8 @@ create_rpm_0mm()
     mkdir $base
     cp create_id_rpmlist.py $base
     file1=${base}.smaller.cons
-    file2=${base}_cons_master.fasta_mature.csv
-    file3=${base}_cons_master.fasta_1_4mm.fa_mature.csv
+    file2=${base}_cons_master_mature.csv
+    file3=${base}_cons_master_1_4mm_mature.csv
     mv $file1 $file2 $file3 $base
     cd $base
     python create_id_rpmlist.py $file1 $file2 0 
@@ -187,7 +188,7 @@ create_rpm_1_4mm()
     file=$1    
     cd $file
     file1=${file}.smaller.cons
-    file2=${file}_cons_master.fasta_1_4mm.fa_mature.csv
+    file2=${file}_cons_master_1_4mm_mature.csv
     python create_id_rpmlist.py $file1 $file2 1_4 
     cd ..
 }
