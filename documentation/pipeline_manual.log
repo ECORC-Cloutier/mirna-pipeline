@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.2.12)  26 MAR 2015 11:00
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.2.12)  27 MAR 2015 14:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -693,18 +693,6 @@ s ex-actly or change
  []
 
 
-Overfull \hbox (25.29095pt too wide) in paragraph at lines 204--205
-\OT1/phv/m/n/12 .fasta and .csv for all 0 mis-match con-served mi-croRNA found 
-(*fasta[]mature.fa),
- []
-
-
-Overfull \hbox (40.83102pt too wide) in paragraph at lines 204--205
-\OT1/phv/m/n/12 .fasta and .csv for 1-4 mis-match con-served mi-croRNA (*fasta[
-]1[]4mm.fa[]mature.fa)
- []
-
-
 Overfull \hbox (0.12607pt too wide) in paragraph at lines 206--207
 []\OT1/phv/m/n/12 Prepare the BLAST database file by run-ning the script mir[]p
 lantize.py
@@ -720,12 +708,6 @@ e[]parallel.sh,
 Overfull \hbox (31.06778pt too wide) in paragraph at lines 215--216
 \OT1/phv/m/n/12 find[]mature[]novel[]parallel.sh, find[]mature[]0mm.py, find[]m
 ature[]1[]4mm.py,
- []
-
-
-Overfull \hbox (46.59534pt too wide) in paragraph at lines 224--225
-\OT1/phv/m/n/12 with all the ``.cons" files, ``.fasta[]mature.csv", and ``.fast
-a[]1[]4mm.fa[]mature.csv"
  []
 
 [11]
@@ -770,7 +752,7 @@ Here is how much of TeX's memory you used:
  17010 multiletter control sequences out of 15000+600000
  18243 words of font info for 40 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 55i,6n,63p,1019b,1078s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,6n,63p,992b,1078s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf
 -dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/f
@@ -778,7 +760,7 @@ onts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/public/amsfonts/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/u
 rw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/
 uhvr8a.pfb>
-Output written on pipeline_manual.pdf (15 pages, 92053 bytes).
+Output written on pipeline_manual.pdf (15 pages, 92052 bytes).
 PDF statistics:
  283 PDF objects out of 1000 (max. 8388607)
  257 compressed objects within 3 object streams
