@@ -28,7 +28,7 @@ csv_write.write("query,sequence,hit,count,normalized read count (RPM)\n")
 for query in query_lines[1:]:
     info = query.split(",")
     curr_query = info[1][1:]
-    curr_id = info[2][1:]
+    curr_id = info[2][5:]
     if (curr_query in data):
         csv_write.write(curr_query+","+data[curr_query][0]+","+curr_id+","+data[curr_query][1]+","+data[curr_query][2])
     else:
