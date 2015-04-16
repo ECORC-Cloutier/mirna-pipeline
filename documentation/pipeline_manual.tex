@@ -255,21 +255,56 @@ Currently, the identification of novel microRNA has yet to been completed. invol
 \noindent Nonetheless, at this point in time, it is safe to assume that all of the conserved microRNA have been successfully annotated.
 
 \section{Final Stage: Verification}
+DISCLAIMER: The following stage is still under development and has not been tested due to unavailability of data. Since a clear procedure has yet to be defined, no shell scripts have been made to automate the process and the current, but the current code has been made to be slightly modular.
+\subsection{Compare control replicates with stress replicates}
 
-The final stage has also yet to be completed. It is concerned with differential gene expression, and will be implemented with R. 
+Here marks the beginning of differential gene expression analysis. It involves a comparison of the microRNA abundance (as given by the reads per million) for a stress against a control. Thus, we use the files for 0 mismatches from the mirBase BLAST reports (2.8) as input and output a matrix.csv that compares all the control replicates and all the replicates of a stress for each day. A log file (*\_sequence\_log.txt) of all the species and their corresponding sequences is also created for steps further downstream.
+\begin{enumerate}
+\item Create a new directory for each day and within each day directory, create directories for each stress (not control).
+\item Using any method of your liking, copy the BLAST reports for 0 mismatches (*rpm\_blasted\_0mm.csv) of the stresses into their respective directories. At the same time, copy the control replicates for each day into each stress directory for that day. For example, directory Day0/Heat/ will have all the heat replicates for day 0 and all the control replicates for day 0 inside.
+\item From any location, run the script matrix.py:
+\begin{tcolorbox}
+\begin{lstlisting}
+python matrix.py /path/to/day/stress/ NUM_REPS 
+\end{lstlisting}
+\end{tcolorbox} 
+where /path/to/day/stress/ is the file path to a stress directory and NUM\_REPS is the total number of replicates in the directory.
+\item Repeat this for each stress for each day. Feel free to write a shell script to automate the process.   
+\end{enumerate}
+
+\subsection{Perform differential expression analysis}
+In this step, we employ an R script to generate important metrics, as well as graphs and diagrams, on the previous comparisons made between controls and stresses. The matrix.csv files for each comparison are used as input and most significantly, a *\_filtered.csv file is produced which contains only significant microRNA.
+\begin{enumerate}
+\item Run the script heat\_dge.py on all the heat stress matrix files:
+\begin{tcolorbox}
+\begin{lstlisting}
+Rscript heat_dge.py /path/to/day/heat/ heat_matrix.csv 
+\end{lstlisting}
+\end{tcolorbox} 
+where /path/to/day/heat/ is the path to the directory containing the heat matrix file and heat\_matrix.csv is the name of the heat matrix file.
+\item Repeat with all the heat files for all the days.
+\item Repeat process with light\_dge.py for light files and uv\_dge.py for UV files.
+\end{enumerate}
+
+\subsection{Find the microRNA target sequences}
+Using psRNATarget, a web database, we can find the target sequences of each microRNA species that was filtered by the differential expression analysis. First, a .fasta file is generated from the filtered.csv to upload onto the website. Then, the results, (in .txt format) are downloaded and parsed to output two final, resulting files which contain wheat targets and non-wheat targets respectively.
+\begin{enumerate}
+\item Run fasta
+\item Upload
+\item Run parse
+\end{enumerate} 
+
+\section*{The End}
+Congratulations! You've made it to the end. Give yourself a big pat on the back for all that work. Now, the onus is on you to maintain and optimize this pipeline. Best of luck!
 
 \section*{Code Maintenance}
 
 The unfortunate truth is that nothing lasts forever. Sooner or later, parts of the pipeline, or even the entire thing, will have to be rewritten to account for updates, or modified for new procedures. There are certain areas that are more prone to changes, which you should be aware of: \\
 
-The database files, used for both the BLAST and the multiple sequence alignments, are constantly changing. New sequences are added to these files almost daily, so newer versions are always being released. Unfortunately, it is not always as simple as just downloading the latest release since the pipeline code may have been hardcoded to not recognize newer types of data, or in a worst-case scenario, the text formatting and syntax within the files (such as the headers) may have been changed, rendering them incompatible with the pipeline. Therefore, it is always important to cross-reference new files with older ones and make changes to the code, if necessary. \\ 
+The database files, used for both the BLAST and the multiple sequence alignment, are constantly changing. New sequences are added to these files almost daily, so newer versions are always being released. Unfortunately, it is not always as simple as just downloading the latest release since the pipeline code may have been hardcoded to not recognize newer types of data, or in a worst-case scenario, the text formatting and syntax within the files (such as the headers) may have been changed, rendering them incompatible with the pipeline. Therefore, it is always important to cross-reference new files with older ones and make changes to the code, if necessary. \\ 
 
-Here's a good exaple: for the creation of the MPC database for the miRBase BLAST, only certain database headers are given as parameters in the code (mir\_plantize.py), meaning that the database is only populated by specific types of microRNA (e.g. only plants). When the database files are updated, there may be new species present that should be included into the BLAST database as well, thus necessitating a code change. Fortunately, this phenomenon is quite rare, so checking for only need to happen maybe once a year or so. For other database files, a quick glance over the document structure should suffice. \\
+Here's a good example: for the creation of the MPC database for the miRBase BLAST, only certain database headers are given as parameters in the code (mir\_plantize.py), meaning that the database is only populated by specific types of microRNA (e.g. only plants). When the database files are updated, there may be new species present that should be included into the BLAST database as well, thus necessitating a code change. Fortunately, this phenomenon is quite rare, so checking for only need to happen maybe once a year or so. For other database files, a quick glance over the document structure should suffice. \\
 
 Other changes that my occur during the lifetime of the pipeline could be updates to the various software tools used, such as bowtie2 and MAFFT, though it is extremely unlikely that any functionality or method of use should change at all. As the pipeline is still young and in review, new modules may need to be added or procedures need to be redefined, meaning that the pipeline must be carefully restructured to ensure that the correct routing of input and output files. 
-
-\section*{The End}
-Congratulations! You've made it to the end. Give yourself a big pat on the back for all that work. Now, the onus is on you to maintain and optimize this pipeline. Best of luck!
-
 
 \end{document}
