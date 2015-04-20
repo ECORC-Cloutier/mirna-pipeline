@@ -5,7 +5,7 @@ ECORC miRNA Pipeline
 ***WARNING***
 The scripts in this pipeline utilize wildcards for filenames. ALWAYS read the script to see if it is necessary to change them so that your files are compatible as well. 
 
-The original pipeline was designed and created by Mahdi Rahman, a graduate computer science student at the University of Manitoba, and his supervisor, Dr. Mike Domaratzki. They can be reached at rahman.safiurbd@gmail.com
+The original pipeline was designed and created by Safiur Rahman Mahdi, a graduate computer science student at the University of Manitoba, and his supervisor, Dr. Mike Domaratzki. They can be reached at rahman.safiurbd@gmail.com
 and mdomarat@cs.umanitoba.ca, respectively. The code that you are about to be using today is directly based on the original pipeline, but has been heavily modified, refactored, and documented by Douglas Huang, a bioinformatician at Agriculture and Agri-Food Canada, so if there are any inquiries or issues regarding the code or procedure, please direct them to him, at dhdouglas.huang@gmail.com. 
 
 A manual can be found within the documentation folder. Feel free to modify the LaTeX document should you have anything to add.
