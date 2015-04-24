@@ -23,8 +23,8 @@ file_write_nonwheat = open(write_name+"_non_wheat_processed.csv", "w") #non-whea
 
 lines = file_read.read().splitlines()
 
-file_write_wheat.write("miRNA_Acc.\tTarget_Acc.\tUni_ID\tRep\tTarget_Desc.\n")
-file_write_nonwheat.write("miRNA_Acc.\tTarget_Acc.\tUni_ID\tRep\tTarget_Desc.\n")
+file_write_wheat.write("miRNA_Acc.\tTarget_Acc.\tExpectation\tUPE\tInhibition\tUni_ID\tRep\tTarget_Desc.\n")
+file_write_nonwheat.write("miRNA_Acc.\tTarget_Acc.\tExpectation\tUPE\tInhibition\tUni_ID\tRep\tTarget_Desc.\n")
 
 for line in lines[2:]:
 	info = line.split("\t")
@@ -35,22 +35,22 @@ for line in lines[2:]:
 		if "UniRef" in target_info: #check for desired target description information (i.e. UniRef and/or Rep, no UniRef)
 			if "Rep:" in target_info:
 				matches = re.search('_(\w\w\w\w\w\w).*(Rep:.*)', target_info)
-				file_write_wheat.write(info[0]+"\t"+info[1]+"\t"+matches.group(1)+"\t"+matches.group(2)+"\t"+target_info+"\n")
+				file_write_wheat.write(info[0]+"\t"+info[1]+"\t"+info[2]+"\t"+info[3]+"\t"+info[10]+"\t"+matches.group(1)+"\t"+matches.group(2)+"\t"+target_info+"\n")
 			else:
 				match = re.search('_(\w\w\w\w\w\w)', target_info)
-				file_write_wheat.write(info[0]+"\t"+info[1]+"\t"+match.group(1)+"\tUnknown\t"+target_info+"\n")
+				file_write_wheat.write(info[0]+"\t"+info[1]+"\t"+info[2]+"\t"+info[3]+"\t"+info[10]+"\t"+match.group(1)+"\tUnknown\t"+target_info+"\n")
 		else:
-			file_write_wheat.write(info[0]+"\t"+info[1]+"\tUnknown\tUnknown\t"+target_info+"\n")
+			file_write_wheat.write(info[0]+"\t"+info[1]+"\t"+info[2]+"\t"+info[3]+"\t"+info[10]+"\tUnknown\tUnknown\t"+target_info+"\n")
 	else: 
 		if "UniRef" in target_info: #check for desired target description information
 			if "Rep:" in target_info:
 				matches = re.search('_(\w\w\w\w\w\w).*(Rep:.*)', target_info)
-				file_write_nonwheat.write(info[0]+"\t"+info[1]+"\t"+matches.group(1)+"\t"+matches.group(2)+"\t"+target_info+"\n")
+				file_write_nonwheat.write(info[0]+"\t"+info[1]+"\t"+info[2]+"\t"+info[3]+"\t"+info[10]+"\t"+matches.group(1)+"\t"+matches.group(2)+"\t"+target_info+"\n")
 			else:
 				match = re.search('_(\w\w\w\w\w\w)', target_info)
-				file_write_nonwheat.write(info[0]+"\t"+info[1]+"\t"+match.group(1)+"\tUnknown\t"+target_info+"\n")
+				file_write_nonwheat.write(info[0]+"\t"+info[1]+"\t"+info[2]+"\t"+info[3]+"\t"+info[10]+"\t"+match.group(1)+"\tUnknown\t"+target_info+"\n")
 		else:
-			file_write_nonwheat.write(info[0]+"\t"+info[1]+"\tUnknown\tUnknown\t"+target_info+"\n")
+			file_write_nonwheat.write(info[0]+"\t"+info[1]+"\t"+info[2]+"\t"+info[3]+"\t"+info[10]+"\tUnknown\tUnknown\t"+target_info+"\n")
 
 file_read.close()
 file_write_wheat.close()
